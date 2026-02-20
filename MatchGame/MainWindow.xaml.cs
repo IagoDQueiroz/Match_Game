@@ -15,7 +15,7 @@ namespace MatchGame
     public partial class MainWindow : Window
     {
         public MainWindow()
-        { 
+        {
 
             timer.Interval = TimeSpan.FromSeconds(.1);
             timer.Tick += Timer_Tick;
@@ -53,7 +53,7 @@ namespace MatchGame
                 "🐼", "🐼"
             };
             Random gerador = new Random();
-
+            
             foreach (TextBlock textblock in mainGrid.Children.OfType<TextBlock>())
             {
                 if(textblock.Name == "TimeTextBlock")
@@ -62,13 +62,13 @@ namespace MatchGame
                 }
                 else
                 {
-                    int index = gerador.Next(animalEmoji.Count);
-                    string nextEmoji = animalEmoji[index];
-                    textblock.Text = nextEmoji;
-                    animalEmoji.RemoveAt(index);
-                }
+                int index = gerador.Next(animalEmoji.Count);
+                string nextEmoji = animalEmoji[index];
+                textblock.Text = nextEmoji;
+                animalEmoji.RemoveAt(index);
             }
         }
+    }
 
         TextBlock LastTextBlockClicked;
         bool findingMatch = false;
